@@ -1,0 +1,17 @@
+{
+  "name": "genpark-cholesky-decomposition-spd-solver-skill",
+  "version": "1.0.0",
+  "description": "Autonomous Agent Cholesky Decomposition LL^T Solver for Symmetric Positive-Definite Covariance Matrices",
+  "entry_point": "client.py",
+  "example": "example_usage.py",
+  "mcp_server": "mcp_server.py",
+  "dependencies": [],
+  "tags": [
+    "genpark-skill",
+    "agentic-ai",
+    "linear-algebra",
+    "cholesky-decomposition",
+    "covariance-matrix",
+    "gaussian-sampling"
+  ]
+}
