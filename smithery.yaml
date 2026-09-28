@@ -1,0 +1,6 @@
+# Smithery configuration for genpark-cholesky-decomposition-spd-solver-skill
+service:
+  name: genpark-cholesky-decomposition-spd-solver-skill
+  command: python
+  args:
+    - mcp_server.py
