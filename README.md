@@ -1,48 +1,51 @@
 # genpark-cholesky-decomposition-spd-solver-skill
 
-[![GitHub stars](https://img.shields.io/github/stars/alphaparkinc/genpark-cholesky-decomposition-spd-solver-skill?style=social)](https://github.com/alphaparkinc/genpark-cholesky-decomposition-spd-solver-skill/stargazers)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![Zero Dependencies](https://img.shields.io/badge/dependencies-0%20external-brightgreen.svg)](#)
-[![Model Context Protocol](https://img.shields.io/badge/MCP-Standard%20Compatible-orange.svg)](#)
+[![GitHub Stars](https://img.shields.io/github/stars/alphaparkinc/genpark-cholesky-decomposition-spd-solver-skill?style=social)](https://github.com/alphaparkinc/genpark-cholesky-decomposition-spd-solver-skill)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Zero External Dependencies](https://img.shields.io/badge/dependencies-0%20(pure%20standard%20library)-brightgreen.svg)](client.py)
+[![MCP Ready](https://img.shields.io/badge/MCP-Ready-purple.svg)](mcp_server.py)
 
-> Autonomous Agent Cholesky Decomposition LL^T Solver for Symmetric Positive-Definite Covariance Matrices
+> **Cholesky factorization (A = L L^T) for symmetric positive-definite covariance matrices**
 
-Part of the **GenPark Autonomous Numerical Linear Algebra & Matrix Decompositions Architecture**.
+Part of the **GenPark Autonomous Agent Matrix**, developed for production AI agents operating across numerical, financial, and scientific computing stacks.
 
-## Architecture Overview
+---
+
+## 🏗️ Architecture
 
 ```mermaid
-graph TD
-    A[Symmetric Positive-Definite Covariance Matrix A] --> B[Iterate Row i from 0 to N-1]
-    B --> C[Diagonal Elements L_ii = sqrt A_ii - sum L_ik^2]
-    C --> D[Off-Diagonal Elements L_ij = 1/L_jj * A_ij - sum L_ik L_jk]
-    D --> E[Construct Lower Triangular Matrix L]
-    E --> F[Exact Factorization A = L * L^T in Half FLOPs of LU]
-    F --> G[Multivariate Gaussian Random Sampling & Kalman Noise Transforms]
+flowchart TD
+    A[Matrix / Linear System Inputs] --> B[genpark-cholesky-decomposition-spd-solver-skill]
+    B --> C[Pure Python Standard Library Numerical Engine]
+    C --> D[Decomposed Matrices / Eigenvalues / Solution Vector]
+    B --> E[MCP Protocol Endpoint stdio]
+    E --> F[Cursor / Claude Desktop / Windsurf Integration]
 ```
 
-## Features
+## 🚀 Quickstart
 
-- **Pure Python Standard Library**: Zero external dependencies (no NumPy or SciPy required).
-- **Production-Grade Design**: Type annotations, partial pivoting, Gram-Schmidt stabilization.
-- **MCP Server Ready**: Built-in stdio Model Context Protocol (MCP) server for Claude / Cursor / Agent tool calling.
-- **Benchmark Validated**: 100% verified test coverage in isolated sandbox environments.
-
-## Quickstart
-
+### Native Python Execution
 ```bash
-git clone https://github.com/alphaparkinc/genpark-cholesky-decomposition-spd-solver-skill.git
-cd genpark-cholesky-decomposition-spd-solver-skill
 python example_usage.py
 ```
 
-## Model Context Protocol (MCP) Usage
-
-```bash
-python mcp_server.py
+### Standard Library Verification
+```python
+from client import *
 ```
 
-## License
+### MCP Server (Claude Desktop / Cursor)
+```json
+{
+  "mcpServers": {
+    "genpark-cholesky-decomposition-spd-solver-skill": {
+      "command": "python",
+      "args": ["-m", "genpark_cholesky_decomposition_spd_solver_skill.mcp_server"]
+    }
+  }
+}
+```
 
-MIT License. Designed for autonomous agentic workflows.
+## 📄 License
+MIT License.
